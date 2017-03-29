@@ -1,30 +1,38 @@
 function Lista(nombre){
 		this.nombre = nombre;
-		this.nuevoElemento(){
-			var elementoLi = document.creatElement("LI");
-			var nombre = document.getElementById("nombreElemento");
-			var nodo = document.creatTextNode(nombre);
+		this.nuevoElemento = function(nuevoElemento){
+			var elementoLi = document.createElement("LI");
+			var nodo = document.creatTextNode(nuevoElemento);
 			elementoLi.appendChild(nodo);
 		}
-		this.borrarElemento()function{
+		
+		this.borrarElemento= function(){
 
 		}
 }
 
 
 function crearLista(Lista){
-			//Crear elemento padre
-		var nuevaLista = document.creatElement('UL');
-		nuevaLista.appendChild(Lista)
+		var nuevaLista = document.createElement('UL');
+		var nombreDeNuevaLista =document.getElementById("nombreNuevaLista").value;
+		var nodo = document.createTextNode(nombreDeNuevaLista);
+		nuevaLista.appendChild(nodo);
 			
 		var aquiHareOtraLista = document.getElementById("nombre");
 		aquiHareOtraLista.appendChild(nuevaLista);
-			//Obtener el nombre que tendrá mi nueva lista
-		var nombreDeNuevaLista = Lista.nombre;
-			//Crear el texto nodo que llevará el nombre de la lista
-		aquiHareOtraLista.innerHTML = nombreDeNuevaLista;
-			
 		
+		var boton = document.createElement("input");
+		boton.type = "button";
+		boton.value= "Agregar elemento";
+		boton.onclick = function(){
+			alert("washo banda")
+		}
+		nuevaLista.appendChild(boton);
+		
+		
+}
+function agregarElemento(){
+	alert("jala chido");
 }
 
 
